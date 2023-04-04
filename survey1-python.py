@@ -22,3 +22,4 @@ def hypercake(n, k):
         k = k - 1
     return value
 
+print(hypercake(8,3))
