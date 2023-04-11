@@ -70,7 +70,7 @@ def main():
 
         print("Calculating...Please wait")
         time.sleep(.3)
-        print("Hypercake value:",hypercake(nValue,kValue))
+        print("\nHypercake value:",hypercake(nValue,kValue), "\n")
 
         repeat = input("Would you like to try again? (y/N): ")
 
@@ -91,3 +91,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print("goodbye.")
