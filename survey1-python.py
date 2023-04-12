@@ -12,8 +12,6 @@ def factorial(n):
         return factorialDict.get(n)
     else:
         newFactorial = n * (factorial(n-1))
-        time.sleep(1)
-        print("Adding factorial to dictionary:", str(n) + "! =", newFactorial)
         factorialDict[n] = newFactorial
         return newFactorial
     # end if
@@ -69,7 +67,6 @@ def main():
 
 
         print("Calculating...Please wait")
-        time.sleep(.3)
         print("\nHypercake value:",hypercake(nValue,kValue), "\n")
 
         repeat = input("Would you like to try again? (y/N): ")
