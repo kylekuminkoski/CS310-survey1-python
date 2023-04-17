@@ -1,34 +1,41 @@
+# Author: Kyle Kuminkoski
+# Co-author: Grant Stumpf
+# I confirm that all work follows the academic integrity policy.
+
 import time
 
 
 factorialDict = {}
-#Returns the factioral of the parameter 'n' by recursively
-#multiplying 'n' by the factorial of 'n-1' until 'n-1' equals 1.
-#Default return value of 1 for all 'n' values less than or equal to 1
-def factorial(n):
-    if (n <= 1):
-        return 1
-    elif(factorialDict.get(n) is not None):
-        return factorialDict.get(n)
-    else:
-        newFactorial = n * (factorial(n-1))
-        factorialDict[n] = newFactorial
-        return newFactorial
-    # end if
-# end def
-
-
-
-def combinations(n, r):
-    if(0 <= r and r >= n):
-        return 0
-    else:
-        return factorial(n) / (factorial(r) * factorial(n-r))
-    #end if
-# end def
 
 def hypercake(n, k):
     value = 0
+    def combinations(n, r):
+        #Returns the factioral of the parameter 'n' by recursively
+        #multiplying 'n' by the factorial of 'n-1' until 'n-1' equals 1.
+        #Default return value of 1 for all 'n' values less than or equal to 1
+        def factorial(n):
+            if (n <= 1):
+                return 1
+            elif(factorialDict.get(n) is not None):
+                return factorialDict.get(n)
+            else:
+                newFactorial = n * (factorial(n-1))
+                factorialDict[n] = newFactorial
+                return newFactorial
+            # end if
+        # end def
+
+
+        if(0 <= r and n <= r):
+            return 0
+        else:
+            return factorial(n) / (factorial(r) * factorial(n-r))
+        #end if
+    # end def 
+
+    if (n == 0):
+        return 1
+
     while(k >= 0):
         value = value + combinations(n, k)
         k = k - 1
